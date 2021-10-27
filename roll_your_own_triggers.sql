@@ -14,7 +14,7 @@ FOR EACH ROW
 
 BEGIN 
 
-REPLACE INTO schema_change.new_customer_blink
+REPLACE INTO schema_change.customer_blink_target
 (customer_blink_id ,
 customer_id, 
 region_id ,
@@ -50,7 +50,7 @@ FOR EACH ROW
 
 BEGIN 
 
-REPLACE INTO schema_change.new_customer_blink
+REPLACE INTO schema_change.customer_blink_target
 (
 customer_blink_id,
 customer_id, 
@@ -85,7 +85,7 @@ FOR EACH ROW
 
 BEGIN 
 
-DELETE IGNORE FROM schema_change.new_customer_blink 
+DELETE IGNORE FROM schema_change.customer_blink_target 
 WHERE 
     customer_blink_id <=> OLD.customer_blink_id ;
 
